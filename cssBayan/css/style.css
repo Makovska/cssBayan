@@ -43,15 +43,15 @@ html {
 body {
 	/* font-family: var(--inter); */
 	background-color: #f0d90f;
+	padding: 3%;
 }
 
 /* Solution */
 div {
-	width: 350px;
+	max-width: 350px;
 	margin: 0px auto;
 	background-color: #f0d90f;
 	transition: 0.5s;
-	cursor: pointer;
 }
 a {
 	display: flex;
@@ -62,11 +62,8 @@ a {
 	margin: 3% 0;
 	padding: 3%;
 	border-radius: 5px;
-	color: #0065fd;
-	transition: 0.5s;
-}
-div:hover a {
 	color: #ffffff;
+	transition: 0.5s;
 }
 a span {
 	width: 100%;
@@ -74,25 +71,36 @@ a span {
 	align-items: center;
 	justify-content: space-between;
 }
-i {
-	height: 100%;
-}
 img {
 	width: 0;
 	transform: scale(0);
 	transition: 0.5s;
 	border-radius: 10px;
 }
-a:hover img,
-span:target+img {
-	transform: scale(1);
-	width: 90%;
-	margin: 10px;
-}
 i {
+	height: 100%;
 	transform: rotate(0) scale(1);
 	transition: 0.5s;
 }
 span:target i {
 	transform: rotate(-405deg) scale(2);
+}
+span:target+img {
+	transform: scale(1);
+	width: 90%;
+	margin: 10px;
+}
+
+@media (min-width: 1080px) {
+	div:hover a {
+		color: #ffffff;
+	}
+	a {
+		color: #0065fd;
+	}
+	a:hover img {
+		transform: scale(1);
+		width: 90%;
+		margin: 10px;
+	}
 }
