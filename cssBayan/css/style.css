@@ -1,0 +1,135 @@
+/* ОБНУЛЕНИЕ СТИЛЕЙ */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+li {
+	list-style: none;
+}
+
+a,
+a:visited,
+a:hover {
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+img {
+	vertical-align: top;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #f0d90f;
+	padding: 3%;
+	overflow-y: scroll;
+}
+
+/* Solution */
+.bayan {
+	max-width: 25rem;
+	margin: 0 auto;
+	background-color: #f0d90f;
+	transition: 0.5s;
+	font-size: 0.9rem;
+}
+.bayan__link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+	background-color: #999a9b;
+	margin: 3% 0;
+	padding: 3%;
+	border-radius: 0.5rem;
+	color: #ffffff;
+	transition: 0.5s;
+}
+.bayan__field {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 5%;
+}
+.bayan__image {
+	width: 0;
+	transition: 0.5s;
+	border-radius: 0.5rem;
+}
+.bayan__icon {
+	height: 100%;
+	transform: rotate(-405deg) scale(1);
+	transition: 0.5s;
+}
+.bayan__field:target,
+.bayan__link:focus {
+	color: #ffffff;
+}
+.bayan__link:focus .bayan__image {
+	width: 90%;
+	margin: 1rem;
+}
+.bayan__link:active .bayan__field,
+.bayan__link:active .bayan__field .bayan__icon {
+	color: #00441f;
+}
+.bayan__field:target .bayan__icon {
+	transform: rotate(0) scale(2);
+}
+.bayan__field:target+.bayan__image {
+	width: 90%;
+	margin: 1rem;
+}
+
+@media (hover: hover) {
+	.bayan:hover .bayan__link,
+	.bayan:hover .bayan__icon,
+	.bayan__link:focus .bayan__icon {
+		color: #ffffff;
+	}
+	.bayan__link {
+		color: #a30a0a;
+	}
+	.bayan__icon {
+		color: transparent;
+	}
+	.bayan__link:hover .bayan__image {
+		width: 90%;
+		margin: 1rem;
+	}
+}
+
+/* tablet */
+@media screen and (min-width: 820.02px) {
+.bayan {
+		font-size: 1rem;
+	}
+}
+
+/* desktop */
+@media screen and (min-width: 1080.02px) {
+.bayan {
+		font-size: 1.1rem;
+	}
+}
