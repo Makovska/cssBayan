@@ -37,23 +37,23 @@ body {
 
 html {
 	scroll-behavior: smooth;
-	font-size: 1.2rem;
 }
 
 body {
-	/* font-family: var(--inter); */
 	background-color: #f0d90f;
 	padding: 3%;
+	overflow-y: scroll;
 }
 
 /* Solution */
-div {
-	max-width: 350px;
-	margin: 0px auto;
+.bayan {
+	max-width: 25rem;
+	margin: 0 auto;
 	background-color: #f0d90f;
 	transition: 0.5s;
+	font-size: 0.9rem;
 }
-a {
+.bayan__link {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -61,46 +61,75 @@ a {
 	background-color: #999a9b;
 	margin: 3% 0;
 	padding: 3%;
-	border-radius: 5px;
+	border-radius: 0.5rem;
 	color: #ffffff;
 	transition: 0.5s;
 }
-a span {
+.bayan__field {
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	gap: 5%;
 }
-img {
+.bayan__image {
 	width: 0;
-	transform: scale(0);
 	transition: 0.5s;
-	border-radius: 10px;
+	border-radius: 0.5rem;
 }
-i {
+.bayan__icon {
 	height: 100%;
-	transform: rotate(0) scale(1);
+	transform: rotate(-405deg) scale(1);
 	transition: 0.5s;
 }
-span:target i {
-	transform: rotate(-405deg) scale(2);
+.bayan__field:target,
+.bayan__link:focus {
+	color: #ffffff;
 }
-span:target+img {
-	transform: scale(1);
+.bayan__link:focus .bayan__image {
 	width: 90%;
-	margin: 10px;
+	margin: 1rem;
+}
+.bayan__link:active .bayan__field,
+.bayan__link:active .bayan__field .bayan__icon {
+	color: #00441f;
+}
+.bayan__field:target .bayan__icon {
+	transform: rotate(0) scale(2);
+}
+.bayan__field:target+.bayan__image {
+	width: 90%;
+	margin: 1rem;
 }
 
-@media (min-width: 1080px) {
-	div:hover a {
+@media (hover: hover) {
+	.bayan:hover .bayan__link,
+	.bayan:hover .bayan__icon,
+	.bayan__link:focus .bayan__icon {
 		color: #ffffff;
 	}
-	a {
-		color: #0065fd;
+	.bayan__link {
+		color: #a30a0a;
 	}
-	a:hover img {
-		transform: scale(1);
+	.bayan__icon {
+		color: transparent;
+	}
+	.bayan__link:hover .bayan__image {
 		width: 90%;
-		margin: 10px;
+		margin: 1rem;
+	}
+}
+
+/* tablet */
+@media screen and (min-width: 820.02px) {
+.bayan {
+		font-size: 1rem;
+	}
+}
+
+/* desktop */
+@media screen and (min-width: 1080.02px) {
+.bayan {
+		font-size: 1.1rem;
 	}
 }
